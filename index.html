@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The World State Project</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons for Footer (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="art-background"></div>
+    <div class="grain-overlay"></div>
+
+    <main class="gallery-container">
+        
+        <!-- HEADER -->
+        <header class="gallery-header">
+            <h1 class="title">The World State</h1>
+            <p id="subtitle" class="subtitle">Capture the current state of the world as a piece of art.</p>
+        </header>
+
+        <!-- STATE 1: CAPTURE -->
+        <div id="introState" class="state-view">
+            <div class="circle-frame">
+                <button id="generateBtn" class="capture-trigger">
+                    <span class="trigger-text">CAPTURE<br>CURRENT STATE</span>
+                </button>
+            </div>
+            <div class="meta-label">
+                <span>SOURCE: GLOBAL LIVE METRICS</span>
+                <span>STATUS: WAITING FOR INPUT</span>
+            </div>
+        </div>
+
+        <!-- STATE 2: LOADING -->
+        <div id="loadingState" class="state-view hidden">
+            <div class="loader-line"></div>
+            <p class="loader-text">INTERPRETING SIGNALS...</p>
+        </div>
+
+        <!-- STATE 3: ARTIFACT -->
+        <div id="artState" class="state-view hidden">
+            <div class="frame">
+                <canvas id="artCanvas" width="1240" height="1754"></canvas>
+            </div>
+            
+            <div class="artifact-controls">
+                <div class="artifact-info">
+                    <span id="timestampDisplay">--</span>
+                    <span class="hash-code">FROZEN TIME</span>
+                </div>
+                <div class="button-row">
+                    <button id="downloadBtn" class="gallery-btn primary">DOWNLOAD PRINT</button>
+                    <button id="resetBtn" class="gallery-btn secondary">CAPTURE NEW</button>
+                </div>
+                
+                <!-- NEW: Learn More Link -->
+                <div class="learn-more-wrapper">
+                    <a href="https://your-explanation-site.com" target="_blank" class="learn-more-link">
+                        How does this work?
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p>Created with ❤️ by Arpan Mondal</p>
+        <div class="social-links">
+            <a href="https://m.youtube.com/@makestreme" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:your@email.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
