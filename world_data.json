@@ -1,10 +1,10 @@
 {
   "p_season": 0.8968,
-  "p_ascension": 0.0829,
-  "p_entropy": 0.0956,
-  "p_sentiment": 0.2,
-  "p_cosmic": 0.7489,
+  "p_ascension": 0.1108,
+  "p_entropy": 0.0906,
+  "p_sentiment": 0.28,
+  "p_cosmic": 0.7506,
   "p_atmosphere": 0.4324,
   "p_humanity": 0.1121,
-  "timestamp": "2026-01-28T10:52:56.623269Z"
+  "timestamp": "2026-01-28T11:16:59.103154Z"
 }
