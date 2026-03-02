@@ -1,19 +1,31 @@
-name: Update World State Data
-
-on:
-  # Runs every 30 minutes
-  schedule:
-    - cron: '*/30 * * * *'
+# Workflow: Update World State Data
+# Status: DISABLED (no triggers)
+#
+# To re-enable:
+# 1) Uncomment the `on:` section below to restore schedule & manual runs:
+#
+# on:
+#   # Runs every 30 minutes
+#   schedule:
+#     - cron: '*/30 * * * *'
   
-  # Allows manual trigger from Actions tab
-  workflow_dispatch:
+#   # Allows manual trigger from Actions tab
+#   workflow_dispatch:
+#
+# 2) Remove the job-level "if: ${{ false }}" so the job can run again.
+# 3) Commit your changes.
+#
+# Tip: You can enable only workflow_dispatch if you prefer manual-only runs.
+#
+# Note: With no `on:` block, GitHub Actions will never trigger this workflow.
 
-# Important: Give the workflow permission to write
 permissions:
   contents: write
 
 jobs:
   update-data:
+    # Safety stop: prevents execution even if someone accidentally re-adds a trigger.
+    if: ${{ false }}
     runs-on: ubuntu-latest
     
     steps:
@@ -47,4 +59,3 @@ jobs:
         else
           git commit -m "Update world state data [$(date '+%Y-%m-%d %H:%M UTC')]"
           git push
-        fi
